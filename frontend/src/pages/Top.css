@@ -73,7 +73,7 @@
 .Table-reserve-num{
     height: 47px;
     width: 158px;
-    color: var(--dim-gray);
+    color: #545050;
     display: flex;
     margin-left: 15px;
     margin-right: 150px;
@@ -86,7 +86,7 @@
 .Table-reserve-time{
     height: 47px;
     width: 157px;
-    color: var(--dim-gray);
+    color: #545050;
     display: flex;
     margin-left: 30px;
     margin-right: 140px;
@@ -99,7 +99,7 @@
 .Table-elapsed-time {
     height: 47px;
     width: 157px;
-    color: var(--dim-gray);
+    color: #545050;
     display: flex;
     margin-left: 30px;
     margin-right: 120px;
@@ -113,7 +113,7 @@
 .Table-status {
     height: 47px;
     width: 188px;
-    color: var(--dim-gray);
+    color: #545050;
     display: flex;
     margin-left: 45px;
     font-family: var(--inter-36-bold-family);
