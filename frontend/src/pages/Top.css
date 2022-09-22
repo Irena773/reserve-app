@@ -1,0 +1,320 @@
+.Top {
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-left: 200px;
+    padding: 32px 52px 130px 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.App-logo{
+    width: 435px;
+    height: 116px;
+    margin-bottom: 56px;
+    margin-left: 428px;
+}
+
+/* 全て　査定中　呼び出し中　対応完了 */
+.Tab{
+    margin-bottom: 59px;
+    padding: 0 0 0 2.03px;
+    display: flex;
+    align-items: center;
+}
+
+/* 赤タブ */
+.Tab-red{
+    background-color: #DB020D;
+    margin-right: 12.19px;
+    border-radius: 13px;
+    padding: 7px 121.66px 7px 121.67px;
+    display: flex;
+    align-items: center;
+}
+/* 赤タブ内の文字 */
+.Tab-red-text{
+    text-align: center;
+    width: 75.52px;
+    color: #FFFFFF;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+}
+/* 白タブ */
+.Tab-white {
+    background-color: #FFFFFF;
+    margin-right: 21.32px;
+    border-radius: 13px;
+    padding: 6px 99.1px 6px 97.93px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #DB020D;
+}
+/* 白タブ内の文字 */
+.Tab-white-text {
+    text-align: center;
+    width: 109.67px;
+    color: #DB020D;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+}
+/* 受付番号 時間 ステータス */
+.Table {
+    margin-bottom: 5.97px;
+    padding: 0 0 0 82px;
+    display: flex;
+    align-items: flex-start;
+}
+/* 受付番号 */
+.Table-reserve-num{
+    height: 47px;
+    width: 158px;
+    color: var(--dim-gray);
+    display: flex;
+    margin-left: 15px;
+    margin-right: 150px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+}
+/* 受付時間 */
+.Table-reserve-time{
+    height: 47px;
+    width: 157px;
+    color: var(--dim-gray);
+    display: flex;
+    margin-left: 30px;
+    margin-right: 140px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+}
+/* 経過時間 */
+.Table-elapsed-time {
+    height: 47px;
+    width: 157px;
+    color: var(--dim-gray);
+    display: flex;
+    margin-left: 30px;
+    margin-right: 120px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+    ;
+}
+/* ステータス */
+.Table-status {
+    height: 47px;
+    width: 188px;
+    color: var(--dim-gray);
+    display: flex;
+    margin-left: 45px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+}
+/* 赤色の横棒 */
+.Table-column-bar {
+    width: 1314px;
+    margin-bottom: 43.03px;
+}  
+
+.num-background {
+    background-color: #EAE9E9;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    margin-left: 1px;
+    border-radius: 24px;
+    padding: 2px 37px 1px 110px;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+  }
+  .num {
+    height: 45px;
+    width: 108px;
+    color: #545050;
+    display: flex;
+    text-align: center;
+    margin-right: 177px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+}
+.num-reserve-time {
+    height: 45px;
+    width: 108px;
+    color: #545050;
+    display: flex;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 108px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+}
+.num-elapse-time {
+    height: 45px;
+    width: 108px;
+    color: #545050;
+    display: flex;
+    text-align: center;
+    margin-left: 120px;
+    margin-right: 100px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  .num-status {
+    height: 45px;
+    width: 120px;
+    color: #545050;
+    display: flex;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 70px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+
+/*. {
+    background-color: var(--white);
+    margin-right: 22.34px;
+    border-radius: 13px;
+    padding: 6px 56.79px 6px 55.91px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--red);
+  }
+  . {
+    width: 194px;
+    color: var(--red);
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+. {
+    background-color: var(--white);
+    border-radius: 13px;
+    padding: 6px 43.68px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--red);
+  }
+  . {
+    width: 219.34px;
+    color: var(--red);
+    text-align: center;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  
+  .num-2-two {
+    background-color: var(--linen);
+    margin-bottom: 21px;
+    margin-left: 2px;
+    border-radius: 24px;
+    padding: 27px 81px 28px 121px;
+    display: flex;
+    align-items: center;
+  }
+  .num-2 {
+    height: 42px;
+    width: 58px;
+    color: var(--dark-slate-gray);
+    display: flex;
+    text-align: center;
+    margin-right: 266px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  . {
+    height: 45px;
+    width: 185px;
+    color: var(--dark-slate-gray);
+    display: flex;
+    text-align: center;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  .num-3 {
+    background-color: var(--linen);
+    margin-left: 2px;
+    border-radius: 24px;
+    padding: 26px 121px 28px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .num-3:not(:last-of-type) {
+    margin-bottom: 21px;
+  }
+  . {
+    height: 42px;
+    width: 58px;
+    color: var(--dark-slate-gray);
+    display: flex;
+    text-align: center;
+    margin-top: 4px;
+    margin-right: 266px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  .num-1130 {
+    height: 45px;
+    width: 108px;
+    color: var(--dark-slate-gray);
+    display: flex;
+    text-align: center;
+    margin-top: 2px;
+    margin-right: 208px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  .num-10-two {
+    height: 45px;
+    width: 108px;
+    color: var(--dark-slate-gray);
+    display: flex;
+    text-align: center;
+    margin-top: 2px;
+    margin-right: 202px;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  }
+  . {
+    height: 45px;
+    width: 120px;
+    color: var(--dark-slate-gray);
+    display: flex;
+    text-align: center;
+    font-family: var(--inter-36-bold-family);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+  } */
