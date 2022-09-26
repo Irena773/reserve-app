@@ -27,6 +27,7 @@
 .Tab-red{
     background-color: #DB020D;
     margin-right: 12.19px;
+    border-color: #DB020D;
     border-radius: 13px;
     padding: 7px 121.66px 7px 121.67px;
     display: flex;
@@ -35,7 +36,7 @@
 /* 赤タブ内の文字 */
 .Tab-red-text{
     text-align: center;
-    width: 75.52px;
+    width: 90.52px;
     color: #FFFFFF;
     font-family: "Inter";
     font-size: 20px;
@@ -61,6 +62,14 @@
     font-size: 20px;
     font-weight: bold;
     line-height: normal;
+}
+
+.Tab-white:hover{
+  background-color: #DB020D;
+}
+
+.Tab-white:hover .Tab-white-text{
+  color: #FFFFFF;
 }
 /* 受付番号 時間 ステータス */
 .Table {

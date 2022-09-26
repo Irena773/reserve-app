@@ -17,11 +17,11 @@ export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any
         />
         
         <div className="Tab">
-          <div className="Tab-red"><p className="Tab-red-text">全て</p></div>
-          <div className="Tab-white"><p className="Tab-white-text">査定中</p></div>
-          <div className="Tab-white"><p className="Tab-white-text">呼び出し中</p></div>
-          <div className="Tab-white"><p className="Tab-white-text">対応完了</p></div>
-          <button type="button" className="Tab-white"onClick={buttonAlert}><p className="Tab-white-text">番号発行</p></button>
+          <button className="Tab-white"><p className="Tab-white-text">全て</p></button>
+          <button className="Tab-white"><p className="Tab-white-text">査定中</p></button>
+          <button className="Tab-white"><p className="Tab-white-text">呼び出し中</p></button>
+          <button className="Tab-white"><p className="Tab-white-text">対応完了</p></button>
+          <button type="button" className="Tab-red"onClick={buttonAlert}><p className="Tab-red-text">番号発行</p></button>
           
         </div>
         <div className="Table">
