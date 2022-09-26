@@ -1,9 +1,8 @@
 from fastapi import FastAPI
-
+from api.routers import secondhand, done
 app = FastAPI()
 
 
 # @ デコレータ　関数に新たな機能を追加
-@app.get("/hello")
-async def hello():
-    return {"message": "hello world!"}
+app.include_router(secondhand.router)
+app.include_router(done.router)
