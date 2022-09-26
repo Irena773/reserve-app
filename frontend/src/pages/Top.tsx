@@ -1,13 +1,35 @@
 import React from 'react'
+import sqlite3 from 'sqlite3'
 import "./Top.css"
 import appImage from "../images/app-logo.png"
 import redBar from "../images/red-bar.png"
 
+type Users = {
+  id:number,
+  reserve_time:string,
+  elapsed_time:string,
+  status:string,
+}
+
 export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any }> = ( {setAccessToken} ) => {
-    
+  
   const buttonAlert = () =>{
     console.log("hoge")
   }
+  // const sqlite3 = require('sqlite3');
+  // const db = new sqlite3.Database('../../../db.sqlite3');
+  
+  // db.all('select * from users', (err:string, users:Users[]) =>{
+  //   if(err){
+  //     console.log(err);
+  //     return;
+  //   } 
+  //   users.forEach((user) => {
+  //     console.log('id:' + user.id + 'reserve_time:' + user.reserve_time + 'status'+ user.status);
+  //   })
+  // });
+  
+
   return (
         <div className="Top">
         <img
