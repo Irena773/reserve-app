@@ -18,6 +18,6 @@ class SecondHand(SecondHandBase):
     id: int
     reserve_time: Optional[int] = Field(datetime.datetime.today())
     elapsed_time: Optional[int] = Field(datetime.datetime.today())
-    
+    done: bool = Field(False, description="完了フラグ")
     class Config:
         orm_mode = True
