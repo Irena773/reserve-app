@@ -1,5 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel, Field
+import datetime
 
 class SecondHandBase(BaseModel):
     status: Optional[str] = Field(None, example="査定中")
@@ -15,8 +16,8 @@ class SecondHandRegisterResponse(SecondHandRegister):
 
 class SecondHand(SecondHandBase):
     id: int
-    reserve_time: int
-    elapsed_time: int
+    reserve_time: Optional[int] = Field(datetime.datetime.today())
+    elapsed_time: Optional[int] = Field(datetime.datetime.today())
     
     class Config:
         orm_mode = True
