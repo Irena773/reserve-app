@@ -1,10 +1,11 @@
 import React from 'react'
 
 import "./Top.css"
+import axios from "../api/axios";
 import appImage from "../images/app-logo.png"
 import redBar from "../images/red-bar.png"
 
-type Users = {
+type SecondHand = {
   id:number,
   reserve_time:string,
   elapsed_time:string,
@@ -12,23 +13,19 @@ type Users = {
 }
 
 export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any }> = ( {setAccessToken} ) => {
-  
-  const buttonAlert = () =>{
-    console.log("hoge")
-  }
-  // const sqlite3 = require('sqlite3');
-  // const db = new sqlite3.Database('../../../db.sqlite3');
-  
-  // db.all('select * from users', (err:string, users:Users[]) =>{
-  //   if(err){
-  //     console.log(err);
-  //     return;
-  //   } 
-  //   users.forEach((user) => {
-  //     console.log('id:' + user.id + 'reserve_time:' + user.reserve_time + 'status'+ user.status);
-  //   })
-  // });
-  
+
+  const [data, setData] = React.useState();
+  const url = "http://127.0.0.1:8000/secondhand";
+
+  const GetData = async() => {
+    try{
+      const response = axios.get(url);
+      console.log("できた")
+      console.log(response);
+    }catch(error){
+      console.error(error);
+    }
+  };
 
   return (
         <div className="Top">
@@ -43,7 +40,7 @@ export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any
           <button className="Tab-white"><p className="Tab-white-text">査定中</p></button>
           <button className="Tab-white"><p className="Tab-white-text">呼び出し中</p></button>
           <button className="Tab-white"><p className="Tab-white-text">対応完了</p></button>
-          <button type="button" className="Tab-red"onClick={buttonAlert}><p className="Tab-red-text">番号発行</p></button>
+          <button type="button" className="Tab-red" onClick={GetData}><p className="Tab-red-text">番号発行</p></button>
           
         </div>
         <div className="Table">

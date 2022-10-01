@@ -6,7 +6,6 @@ import { Top } from "./pages/Top";
 function App() {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   return (
-    
     <BrowserRouter>
       <Routes>
       <Route path={"/"} element={<Top setAccessToken={setAccessToken} />} />
