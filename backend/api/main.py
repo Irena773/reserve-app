@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routers import secondhand, done
+from api.routers import secondhand
 
 app = FastAPI()
 
@@ -19,4 +19,3 @@ app.add_middleware(
 
 # @ デコレータ　関数に新たな機能を追加
 app.include_router(secondhand.router)
-app.include_router(done.router)

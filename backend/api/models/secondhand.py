@@ -7,15 +7,6 @@ class SecondHand(Base):
     __tablename__ = "secondhands"
 
     id = Column(Integer, primary_key=True)
-    reserve_time = Column(Integer)
-    elapsed_time = Column(Integer)
+    reserve_time = Column(String(1024))
+    elapsed_time = Column(String(1024))
     status = Column(String(1024))
-
-    done = relationship("Done", back_populates="secondhand")
-
-
-class Done(Base):
-    __tablename__ = "dones"
-
-    id = Column(Integer, ForeignKey("secondhands.id"), primary_key=True)
-    secondhand = relationship("SecondHand", back_populates="done")

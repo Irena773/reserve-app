@@ -12,6 +12,7 @@ async def create_secondhand(
     db: AsyncSession, secondhand_create: secondhand_schema.SecondHandRegister
 ) -> secondhand_model.SecondHand:
     secondhand = secondhand_model.SecondHand(**secondhand_create.dict())
+    print(secondhand)
     db.add(secondhand)
     await db.commit()
     await db.refresh(secondhand)
@@ -32,9 +33,7 @@ async def get_secondhand_with_done(db:AsyncSession) -> List[Tuple[int,int,int,st
                 secondhand_model.SecondHand.reserve_time,
                 secondhand_model.SecondHand.elapsed_time,
                 secondhand_model.SecondHand.status,
-
-                secondhand_model.Done.id.isnot(None).label("done"),
-            ).outerjoin(secondhand_model.Done)
+            )
         )
     )
     return result.all()

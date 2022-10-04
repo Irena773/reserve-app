@@ -8,20 +8,34 @@ import redBar from "../images/red-bar.png"
 export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any }> = ( {setAccessToken} ) => {
 
   const [data, setData] = useState([]);
+
+
   const url = "http://127.0.0.1:8000/secondhand";
 
- type SecondHand = {
+type SecondHand = {
   status: string,
   id: number,
   reserve_time : number,
   elapsed_time : number,
   done: boolean
- }
+}
+  //DBから買い取り一覧を取得
   const getData = async () => {
     await axios.get(url)
     .then((res) => {
       setData(res.data);
+      console.log(res.data);
     })
+  }
+
+  const addData = async() => {
+    await axios.post(url, {
+      status:"査定中"
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    
   }
 
   useEffect(()=>{
@@ -40,7 +54,7 @@ export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any
           <button className="Tab-white"><p className="Tab-white-text">査定中</p></button>
           <button className="Tab-white"><p className="Tab-white-text">呼び出し中</p></button>
           <button className="Tab-white"><p className="Tab-white-text">対応完了</p></button>
-          <button type="button" className="Tab-red" onClick={getData} ><p className="Tab-red-text">番号発行</p></button>
+          <button type="button" className="Tab-red" onClick={addData} ><p className="Tab-red-text">番号発行</p></button>
           
         </div>
         <div className="Table">
@@ -55,18 +69,14 @@ export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any
           src={redBar}
         />
 
-        
-         {data.map((data:SecondHand)=>(
+        {data.map((data:SecondHand)=>(
           <div className="num-background" key={data.id}>
             <p className="num">{data.id}</p>
             <p className="num-reserve-time">{data.reserve_time}</p>
             <p className="num-elapse-time">{data.elapsed_time}</p>
             <p className="num-status">{data.status}</p>
             </div>
-         ))}
-          
-          
-        
+        ))}
       </div>
     );}
 
