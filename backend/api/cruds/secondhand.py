@@ -12,7 +12,6 @@ async def create_secondhand(
     db: AsyncSession, secondhand_create: secondhand_schema.SecondHandRegister
 ) -> secondhand_model.SecondHand:
     secondhand = secondhand_model.SecondHand(**secondhand_create.dict())
-    print(secondhand)
     db.add(secondhand)
     await db.commit()
     await db.refresh(secondhand)
