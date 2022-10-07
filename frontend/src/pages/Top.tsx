@@ -19,7 +19,8 @@ type SecondHand = {
   done: boolean
 }
 
-  const temp = setInterval( () => {
+// 1000ms間隔で現在日時を取得する
+  const updateTime = setInterval( () => {
       const today = new Date();
       // console.log(today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate()
       // + "T" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
@@ -36,7 +37,6 @@ type SecondHand = {
       for(let i = 0; i < res.data.length; i++){
           let reserve_tmp = res.data[i].reserve_time;
           let elapse_tmp  = res.data[i].elapsed_time;
-          console.log(reserve_tmp);
           reserve_tmp = reserve_tmp.replace(/(.+)-(.+)-(.+)T/gi,'');
           elapse_tmp  = elapse_tmp.replace(/(.+)-(.+)-(.+)T/gi,'');
           
@@ -59,6 +59,7 @@ type SecondHand = {
 
   useEffect(()=>{
     getData();
+
   }, []);
 
   return (
@@ -88,7 +89,7 @@ type SecondHand = {
           src={redBar}
         />
 
-      
+
         {datas.map((data:SecondHand)=>(
           <div className="num-background" key={data.id}>
             <p className="num">{data.id}</p>
