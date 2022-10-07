@@ -7,15 +7,13 @@ import redBar from "../images/red-bar.png"
 
 export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any }> = ( {setAccessToken} ) => {
 
-  const [data, setData] = useState([]);
-
-
+  const [datas, setData] = useState([]);
   const url = "http://127.0.0.1:8000/secondhand";
 
 type SecondHand = {
   status: string,
   id: number,
-  reserve_time : number,
+  reserve_time : string,
   elapsed_time : number,
   done: boolean
 }
@@ -24,8 +22,18 @@ type SecondHand = {
     await axios.get(url)
     .then((res) => {
       setData(res.data);
-      console.log(res.data);
-    })
+      //受付時間の表示形式の変更
+      for(let i = 0; i < res.data.length; i++){
+          let reserve_tmp = res.data[i].reserve_time;
+          let elapse_tmp  = res.data[i].elapsed_time;
+          
+          reserve_tmp = reserve_tmp.replace(/(.+)-(.+)-(.+)T/gi,'');
+          elapse_tmp  = elapse_tmp.replace(/(.+)-(.+)-(.+)T/gi,'');
+          
+          res.data[i].reserve_time = reserve_tmp;
+          res.data[i].elapsed_time = elapse_tmp;
+      }
+    },)
   }
 
   const addData = async() => {
@@ -33,10 +41,10 @@ type SecondHand = {
       status:"査定中"
     })
     .then((res) => {
-      console.log(res);
+      getData();
     })
-    
   }
+
 
   useEffect(()=>{
     getData();
@@ -69,7 +77,7 @@ type SecondHand = {
           src={redBar}
         />
 
-        {data.map((data:SecondHand)=>(
+        {datas.map((data:SecondHand)=>(
           <div className="num-background" key={data.id}>
             <p className="num">{data.id}</p>
             <p className="num-reserve-time">{data.reserve_time}</p>
