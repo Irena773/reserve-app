@@ -16,7 +16,6 @@ export default function App() {
       <Text style={styles.waitingNum}>２人</Text>  
 
       <TouchableOpacity style={styles.redButton}><Text style={styles.statusText}>査定中</Text></TouchableOpacity>  
-      
       <Text style={styles.caution}>買い取りが成立した場合、ご本人様確認ができる書類(免許証、マイナンバーカード等)が必要です。ご準備ください。</Text>
       
     </View>
