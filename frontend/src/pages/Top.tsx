@@ -5,11 +5,14 @@ import "./Top.css"
 import axios from "../api/axios";
 import appImage from "../images/app-logo.png"
 import redBar from "../images/red-bar.png"
+import QRcode from "../images/QRcode.png"
+import { render } from '@testing-library/react';
 
 export const Top: React.FC<{ setAccessToken: (accessToken: string | null) => any }> = ( {setAccessToken} ) => {
 
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [datas, setData] = useState([]);
+  const [userID, setUserID] = useState(0);
   const url = "http://127.0.0.1:8000/secondhand";
   const [nowTime, setNowTime] = useState("2022-10-07T23:00:53.775346+09:00");
   ReactModal.setAppElement('#root')
@@ -35,6 +38,7 @@ type SecondHand = {
     await axios.get(url)
     .then((res) => {
       setData(res.data);
+      console.log(datas)
       //受付時間の表示形式の変更
       for(let i = 0; i < res.data.length; i++){
           let reserve_tmp = res.data[i].reserve_time;
@@ -67,6 +71,8 @@ type SecondHand = {
   const closeModal = () => {
     setEditModalIsOpen(false);
   };
+
+
   return (
         <div className="Top">
         <img
@@ -92,15 +98,24 @@ type SecondHand = {
 
         <div className='Table-column-bar'>'               '</div>
         
-        {datas.map((data:SecondHand)=>(
+        {datas.map((data:SecondHand, i)=>(
+          
           <div className="num-background" key={data.id}>
             <p className="num">{data.id}</p>
             <p className="num-reserve-time">{data.reserve_time}</p>
             <p className="num-elapse-time">{data.elapsed_time}</p>
             <p className="num-status">{data.status}</p>
-            <button type="button" className='button-detail' onClick={() => {setEditModalIsOpen(true);}}><p className="button-detail-text">詳細</p></button>
-            <ReactModal isOpen={editModalIsOpen} onRequestClose={closeModal}className="react-modal"  overlayClassName="Overlay">
-            モーダル開いた
+            <button type="button" className='button-detail' onClick={() => {setEditModalIsOpen(true);setUserID(i+1)}}><p className="button-detail-text">詳細</p></button>
+            <ReactModal  isOpen={editModalIsOpen} onRequestClose={closeModal} className="react-modal"  overlayClassName="Overlay">
+              <img alt="" className="modal-logo" src={appImage}/>
+              <p className='modal-text'>{nowTime}</p>
+              <p className='modal-text'>お客様のお呼び出し番号</p>
+              <p className='modal-text'>{userID}番</p>
+              <img
+                alt=""
+                className=""
+                src={QRcode}
+              />
             </ReactModal>
           </div>
         ))}

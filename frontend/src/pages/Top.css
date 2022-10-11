@@ -253,12 +253,15 @@
   display: block;
   padding: 2em;
   min-width: 20em;
-  max-width: 70%;
-  color: #f00;
+  min-height: 40em;
+  max-width: 50%;
+  color: #545050;
+  font-weight: bold;
   background-color: #fff;
   border-radius: 1em;
   transform: translate(-50%, -50%);
   outline: transparent;
+  text-align: center;
 }
 
 .Overlay {
@@ -268,4 +271,18 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+.modal-text{
+  color: #545050;
+  font-weight: bold;
+  font-family: "Inter";
+  font-size: 25px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.modal-logo{
+  height: 80%;
+  width : 80%;
 }
