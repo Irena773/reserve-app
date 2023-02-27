@@ -76,3 +76,23 @@ const styles = StyleSheet.create({
   }
 });
 
+
+// import sys
+
+// def main():
+//     H,W = map(int, input().split())
+//     S=[]
+//     for i in range(H):
+//         tmp = input()
+//         S.append(list(tmp))
+//     T = input()
+    
+//     for i in range(W):
+//         if S[0][i] == T[0]:
+//             print(1)
+//             exit()
+
+//     print(0)        
+// if __name__ == '__main__':
+    
+//     main()

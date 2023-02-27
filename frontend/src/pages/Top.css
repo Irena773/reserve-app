@@ -19,7 +19,8 @@
 .Tab{
     margin-bottom: 59px;
     padding: 0 0 0 2.03px;
-    display: flex;
+    display: inline;
+    float:left;
     align-items: center;
 }
 
@@ -30,7 +31,7 @@
     border-color: #DB020D;
     border-radius: 13px;
     padding: 7px 121.66px 7px 121.67px;
-    display: flex;
+    display: inline-block;
     align-items: center;
 }
 /* 赤タブ内の文字 */
@@ -49,7 +50,7 @@
     margin-right: 21.32px;
     border-radius: 13px;
     padding: 6px 99.1px 6px 97.93px;
-    display: flex;
+    display: inline-block;
     align-items: center;
     border: 1px solid #DB020D;
 }
@@ -223,7 +224,7 @@
     margin-right: 10.32px;
     border-radius: 13px;
     padding: 6px 19.1px 6px 17.93px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     border: 1px solid #DB020D;
   }
